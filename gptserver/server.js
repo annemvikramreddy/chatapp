@@ -24,14 +24,13 @@ app.post('/question', async (req, res) => {
 
     console.log(completion.choices[0].message.content);
 
-    // Use OpenAI
-    // const answer = await openai.ask(question);
+    
 
      res.json({answer:completion.choices[0].message.content });
   } catch (error) {
     console.error('Error processing question:', error);
     res.status(500).json({ error: 'Internal Server Error' });
-    res
+    
   }
 });
 
