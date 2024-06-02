@@ -1,11 +1,14 @@
 // Node.js (server.js)
 import express from 'express';
 import cors from 'cors';
+import 'dotenv/config';
+
 import { OpenAI} from 'openai'; // Assuming OpenAI is exported as OpenAIAPI in openai.mjs
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const openai = new OpenAI({ apiKey: "sk----key" });
+const API = process.env.CHAT_API
+const openai = new OpenAI({ apiKey: API });
 
 app.use(cors());
 app.use(express.json());
